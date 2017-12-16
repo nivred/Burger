@@ -1,20 +1,13 @@
-// Dependencies
+// Require mysql
 var mysql = require('mysql');
-var connection; 
 
-// Setup JAWSDB connection
-if (process.env.JAWSDB_URL) {
-	connection = mysql.createConnection(process.env.JAWSDB_URL);
-
-} else {
-	// Setup mysql connection
-	connection = mysql.createConnection({
-		host: "localhost",
-		user: "root",
-		password: "!pS159iS218",
-		database: "burgers_db"
-	});
-}
+// Setup mysql connection
+var connection = mysql.createConnection({
+	host: "localhost",
+	user: "root",
+	password: "!pS159iS218",
+	database: "burgers_db"
+});
 
 // Connect to mysql
 connection.connect(function(err) {
