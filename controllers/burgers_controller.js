@@ -4,8 +4,8 @@ var burger = require("../models/burger")
 var router = express.Router();
 // Create routes
 // GET request
-router.get('/index', function (req, res) {
-    burger.all(function(data) {
+router.get('/', function (req, res) {
+    burger.selectAll(function(data) {
         var hbsObject = { burgers: data };
 
         res.render('index', hbsObject);
@@ -13,14 +13,15 @@ router.get('/index', function (req, res) {
 });
 // POST request
 router.post("/api/burgers", function(req, res) {
-    burger.new(req.body.burgerName.trim(), function(result) {
+    console.log("req.body..........\n", req.body);
+    burger.insertOne(req.body.burgerName.trim(), function(result) {
     //   res.json(res);
-        res.redirect("/index")
+        res.redirect("/")
     });
 });
 // PUT request
 router.put("/api/burgers/:id", function(req, res) {
-    burger.eat(req.params.id, function(result) {
+    burger.updateOne(req.params.id, function(result) {
         if (result.changedRows == 0) {
             return res.status(404).end();
         } else {
@@ -30,7 +31,7 @@ router.put("/api/burgers/:id", function(req, res) {
 });
 // Redirect
 router.get("/*", function(req, res) {
-    res.redirect("/index")
+    res.redirect("/")
 });
 // Export server.js
 module.exports = router

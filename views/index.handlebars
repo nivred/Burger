@@ -1,15 +1,13 @@
 <!-- HEADER -->
-
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-3 col-md-4">
-            <h1 class="col-xs-6 col-md-4 text-center header">Eat-Da-Burger!</h1>
-        <div class="col-xs-3 col-md-4">
+        {{!-- <div class="col-xs-12 col-md-12"> --}}
+            <h1 class="col-xs-12 col-md-12 text-center h1 heading">Eat-Da-Burger!</h1>
+        {{!-- <div class="col-xs-3 col-md-4"> --}}
     </div> 
 </div>
 
 <!-- NOT-EATEN SECTION -->
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-6 col-md-6">
@@ -35,7 +33,6 @@
         </div>
 
 <!-- EAT SECTION -->
-
         <div class="col-xs-6 col-md-6">
             <ul>
                 {{#each burgers}}
@@ -60,12 +57,11 @@
     </div>
 
 <!-- ADD BURGER SECTION -->
-
     <div class="row">
         <div class="col-xs-4 col-md-4">
-            <form class="create-update-form text-center" action="/" method="POST">
+            <form class="create-update-form text-center" action="/api/burgers" method="POST">
                 <div class="form-group">
-                    <input type="text" id="ca" class="newburger" name="name">
+                    <input type="text" id="ca" class="newburger" name="burgerName">
                 </div> 
                 <button type="submit" class="btn-primary">Submit</button>
             </form>

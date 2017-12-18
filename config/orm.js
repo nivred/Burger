@@ -12,9 +12,13 @@ var orm = {
         });
     },
     insertOne: function(table, col, val, cb) {
-        var queryString = "INSERT INTO ?? (??, ??, ??) VALUES (?, ?, ?)";
+        console.log("values\n......" + "\n" + table + "\n" + col + "\n" + val + "\n" + cb );
+        var queryString = "INSERT INTO ?? (??) VALUES (??)";
+//        INSERT INTO burgers (burger_name, devoured) VALUES ("Juicy Goosey Turkey", 1);
+  
         connection.query(queryString, [table, col, val], function(err, result) {
             if (err) {
+                console.log(this.sql);
                 throw err;
             }
                 cb(result);
