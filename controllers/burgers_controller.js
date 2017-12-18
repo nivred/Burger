@@ -13,20 +13,17 @@ router.get('/', function (req, res) {
 });
 // POST request
 router.post("/api/burgers", function(req, res) {
-    console.log("req.body..........\n", req.body);
-    burger.insertOne(req.body.burgerName.trim(), function(result) {
+    var myArray = [];
+    myArray.push(req.body.burgerName);
+    burger.insertOne("burger_name", myArray, function(result) {
     //   res.json(res);
         res.redirect("/")
     });
 });
 // PUT request
 router.put("/api/burgers/:id", function(req, res) {
-    burger.updateOne(req.params.id, function(result) {
-        if (result.changedRows == 0) {
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
+    burger.updateOne({devoured:1}, "id = " + req.params.id, function(result) {
+        res.redirect("/");
     });
 });
 // Redirect

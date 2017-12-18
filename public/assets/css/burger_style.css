@@ -6,5 +6,18 @@ body {
 
 .h1, h1 {
     color: white;
-    weight: 900;
+    font-family: 'Sarina', cursive;
+    font-size: 42px;
+}
+
+.h5, h5 {
+    color: white;
+}
+
+#header {
+    margin-bottom: 50px;
+}
+
+li {
+    list-style: none;
 }
