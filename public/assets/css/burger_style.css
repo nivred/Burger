@@ -14,6 +14,7 @@ body {
     color: rgb(250, 178, 62);
     padding: 10px 15px;
     font-weight: 800;
+    text-shadow: 2px 2px 2px black;
 }
 
 #header {
