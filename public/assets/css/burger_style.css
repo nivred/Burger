@@ -11,7 +11,9 @@ body {
 }
 
 .h5, h5 {
-    color: white;
+    color: rgb(250, 178, 62);
+    padding: 10px 15px;
+    font-weight: 800;
 }
 
 #header {
@@ -20,4 +22,8 @@ body {
 
 li {
     list-style: none;
+}
+
+input.newburger {
+    width: 300px;
 }

@@ -1,4 +1,5 @@
 // Require mysql
+// Setup mysql connection
 var mysql = require('mysql');
 var connection;
 if (process.env.JAWSDB_URL) {
@@ -12,9 +13,6 @@ if (process.env.JAWSDB_URL) {
 		database: "burgers_db"
 	});
 }
-
-// Setup mysql connection
-
 
 // Connect to mysql
 connection.connect(function(err) {
